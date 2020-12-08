@@ -28,6 +28,8 @@ client.on("message", async(message) => {
   const args = message.content.slice(prefix.length).trim().split(/ +/g)
   const command = args.shift().toLowerCase();
 
+  if (message.author.bot || !message.content.startsWith(prefix)) return;
+
   switch(command){
       case 'play':
           execute(message, serverQueue);
@@ -121,7 +123,7 @@ client.on("message", async(message) => {
       if(!message.member.voice.channel)
           return message.channel.send("YOU'RE NOT IN THE VOICE CHANNEL");
       if(serverQueue.connection.dispatcher.paused)
-          return message.channel.send('Song is paused already l OMEAGALUL ser');
+          return message.channel.send('Paused');
       serverQueue.connection.dispatcher.pause();
       message.channel.send("The song has been paused!");
   }
@@ -146,8 +148,8 @@ client.on('ready', () => {
   });
 
   client.on('message', msg => {
-    if (msg.content === 'moe') {
-      msg.channel.send("moe money cash money")
+    if (msg.content === "You see, I'm a loser. Like you") {
+      msg.channel.send("Haha, a pair of losers")
     }
   })
   

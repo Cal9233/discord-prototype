@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "bot.js",
+  "engine": {
+    "npm": "6.14.5"
+  },
   "scripts": {
     "start": "node ./src/bot.js",
-    "dev": "nodemon bot.js"
+    "dev": "nodemon bot.js",
+    "build": "npm install"
   },
   "keywords": [],
   "author": "",
@@ -18,11 +22,12 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "ffmpeg": "0.0.4",
+    "ffmpeg-static": "^4.2.7",
     "fluent-ffmpeg": "^2.1.2",
     "nan": "^2.14.2",
     "opusscript": "0.0.7",
     "yt-search": "^2.5.1",
-    "ytdl-core": "^4.1.1",
+    "ytdl-core": "^4.1.4",
     "ytdl-core-discord": "^1.2.4",
     "ytsearcher": "^1.2.3"
   },
